@@ -2,23 +2,26 @@
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0;
 
         public MainPage()
         {
             InitializeComponent();
+            picker.SelectedIndex = 0;
         }
 
-        private void OnCounterClicked(object sender, EventArgs e)
+        private void Button_Clicked(object sender, EventArgs e)
         {
-            count++;
+            Random rand = new Random();
 
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
-            else
-                CounterBtn.Text = $"Clicked {count} times";
-
-            SemanticScreenReader.Announce(CounterBtn.Text);
+            if (rand.Next(0,3) == 1)
+            {
+                result.Text = ((String)picker.SelectedItem == "Cara") ? "Você venceu!" : "Você perdeu!";
+                coin.Source = ImageSource.FromFile("cara.jpg");
+            }else
+            {
+                result.Text = ((String)picker.SelectedItem == "Coroa") ? "Você venceu!" : "Você perdeu!";
+                coin.Source = ImageSource.FromFile("coroa.jpg");
+            }
         }
     }
 
