@@ -25,6 +25,7 @@ namespace FlipCoin.ViewModel
         public FlipViewModel()
         {
             ImageName = "cara.jpg";
+            SelectedCoin = "Cara";
             flipCmd = new Command(flipCoin);
         }
 
