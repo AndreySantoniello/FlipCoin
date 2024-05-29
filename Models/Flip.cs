@@ -18,12 +18,12 @@ namespace FlipCoin.Models
             if (rand.Next(0, 3) == 1)
             {
                 this.result = (selectedCoin) ? "Você venceu!" : "Você perdeu!";
-                this.imageName = "cara.jpg";
+                this.imageName = "coroa.jpg";
             }
             else
             {
                 this.result = (!selectedCoin) ? "Você venceu!" : "Você perdeu!";
-                this.imageName = "coroa.jpg";
+                this.imageName = "cara.jpg";
             }
         }
     }
